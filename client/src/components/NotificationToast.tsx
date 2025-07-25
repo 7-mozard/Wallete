@@ -13,8 +13,10 @@ export function NotificationToast() {
   });
 
   useEffect(() => {
-    const unreadNotifications = fetchedNotifications.filter((n: any) => !n.isRead);
-    setNotifications(unreadNotifications.slice(0, 3)); // Show max 3 notifications
+    if (Array.isArray(fetchedNotifications)) {
+      const unreadNotifications = fetchedNotifications.filter((n: any) => !n.isRead);
+      setNotifications(unreadNotifications.slice(0, 3)); // Show max 3 notifications
+    }
   }, [fetchedNotifications]);
 
   const dismissNotification = (id: string) => {

@@ -71,14 +71,14 @@ export function Sidebar({ userRole }: SidebarProps) {
 
             return (
               <Link key={item.href} href={item.href}>
-                <a
-                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md border-l-4 ${
+                <div
+                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md border-l-4 cursor-pointer ${
                     isActive ? `${activeClass} border-l-4` : `${inactiveClass} border-transparent`
                   }`}
                 >
                   <item.icon className="mr-3 h-5 w-5" />
                   {item.label}
-                </a>
+                </div>
               </Link>
             );
           })}
