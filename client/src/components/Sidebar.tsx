@@ -34,7 +34,7 @@ export function Sidebar({ userRole }: SidebarProps) {
   ];
 
   const adminNavItems = [
-    { href: "/admin", icon: Home, label: "Tableau de bord" },
+    { href: "/", icon: Home, label: "Tableau de bord" },
     { href: "/admin/users", icon: Users, label: "Utilisateurs" },
     { href: "/admin/money", icon: DollarSign, label: "Créer Monnaie" },
     { href: "/admin/credit", icon: Plus, label: "Créditer Compte" },

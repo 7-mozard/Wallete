@@ -149,7 +149,7 @@ export default function AdminDashboard() {
         <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow-sm border-b border-gray-200">
           <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
             <div className="flex-1 flex items-center">
-              <h1 className="text-2xl font-semibold text-gray-900">Administration</h1>
+              <h1 className="text-2xl font-semibold text-gray-900">Bienvenu administrateur général</h1>
             </div>
 
             <div className="ml-4 flex items-center md:ml-6">
