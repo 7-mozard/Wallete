@@ -52,7 +52,11 @@ export function Sidebar({ userRole }: SidebarProps) {
       <div className="flex flex-col flex-grow bg-white pt-5 pb-4 overflow-y-auto border-r border-gray-200">
         <div className="flex items-center flex-shrink-0 px-4">
           <div className={`h-10 w-10 ${brandColor} rounded-lg flex items-center justify-center`}>
-            <brandIcon.type className="text-white" />
+            {userRole === "admin" ? (
+              <Shield className="text-white" />
+            ) : (
+              <Wallet className="text-white" />
+            )}
           </div>
           <span className="ml-3 text-xl font-semibold text-gray-900">{brandText}</span>
         </div>

@@ -117,11 +117,11 @@ export class DatabaseStorage implements IStorage {
     currency: "FC" | "USD",
     amount: string
   ): Promise<Wallet> {
-    const balanceField = currency === "FC" ? "balance_fc" : "balance_usd";
+    const balanceField = currency === "FC" ? wallets.balanceFC : wallets.balanceUSD;
     const [wallet] = await db
       .update(wallets)
       .set({
-        [balanceField]: sql`${wallets[balanceField]} + ${amount}`,
+        [currency === "FC" ? "balanceFC" : "balanceUSD"]: sql`${balanceField} + ${amount}`,
         updatedAt: new Date(),
       })
       .where(eq(wallets.userId, userId))
