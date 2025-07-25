@@ -1,0 +1,100 @@
+Bonjour,
+Je souhaite faire développer une application web appelée Wallete, qui servira de portefeuille électronique pour permettre aux utilisateurs de :
+•	transférer de l’argent entre eux,
+•	acheter des articles dans une boutique intégrée,
+•	recevoir de la monnaie électronique après dépôt réel auprès d’un administrateur.
+Voici le cahier des charges détaillé du projet.
+ 
+🎯 Objectif de l'application
+Créer une application web responsive (adaptée à mobile, tablette et desktop), avec un design professionnel, permettant la gestion d’un système d’argent électronique interne.
+ 
+🧑‍💻 Stack technique imposée
+Composant	Technologie demandée
+Backend (serveur)	Node.js + TypeScript
+Frontend	React.js + Tailwind CSS
+Base de données	PostgreSQL
+Authentification	JWT + bcrypt
+ORM (au choix)	Prisma ou TypeORM
+Hébergement ciblé	(Optionnel) compatible Render ou Railway
+ 
+👤 Rôles utilisateurs
+1.	Administrateur général (un seul)
+o	Peut créer de la monnaie électronique (en FC ou $)
+o	Peut créditer les comptes clients après dépôt réel
+o	Gère les comptes utilisateurs (voir, bloquer, supprimer)
+o	Gère les articles de la boutique
+o	Visualise l’historique des transactions filtrable par type
+2.	Client (utilisateur normal)
+o	Peut créer un compte et se connecter
+o	A un portefeuille avec solde
+o	Peut recevoir de la monnaie électronique
+o	Peut envoyer de l’argent à un autre client
+o	Peut acheter des articles si son solde le permet
+o	Reçoit une notification après chaque dépôt ou transaction
+o	Consulte son historique (dépôts, achats, transferts)
+ 
+💵 Fonctionnalités détaillées
+🔐 Authentification
+•	Création de compte client
+•	Connexion avec mot de passe sécurisé (bcrypt)
+•	Utilisation de JWT pour les sessions
+💰 Création de monnaie électronique
+•	Par l'administrateur uniquement
+•	Choix de la devise : Franc Congolais (FC) ou Dollar (USD)
+•	Injection dans le système (pas de lien bancaire)
+💸 Dépôt manuel via contact
+•	Le client remet de l'argent réel à l’administrateur
+•	L’administrateur crédite son compte manuellement
+•	Le client reçoit une notification :
+"Vous avez effectué un dépôt de [montant] [devise]"
+•	L’opération est enregistrée dans l’historique
+🔁 Transferts entre clients
+•	Les clients peuvent transférer de l’argent à d’autres
+•	Vérification du solde
+•	Notification à la réception
+•	Historique enregistré
+🛍️ Achat d’articles
+•	Boutique intégrée avec image, prix, stock, description
+•	Paiement via solde électronique
+•	Historique d’achats visible par le client
+📊 Historique des transactions
+•	Pour chaque client :
+o	Dépôts
+o	Transferts envoyés/reçus
+o	Achats
+•	Pour l’administrateur :
+o	Tous les historiques filtrables par type (achat, dépôt, transfert)
+ 
+🖥️ Interface (UI/UX)
+•	Application responsive : compatible mobile, tablette, desktop
+•	Utilisation de Tailwind CSS pour une interface moderne
+•	Design propre, ergonomique, facile à naviguer
+•	Dashboard différencié pour l’administrateur et pour les clients
+ 
+🧩 Structure technique attendue (exemple)
+📦 wallete-app
+├── backend/ (Node.js + TypeScript)
+│   ├── routes/
+│   ├── controllers/
+│   ├── services/
+│   ├── prisma/ (ou TypeORM config)
+│   └── middleware/
+│
+├── frontend/ (React.js + Tailwind CSS)
+│   ├── pages/
+│   ├── components/
+│   ├── auth/
+│   └── api/ (appel backend)
+│
+└── database/ (PostgreSQL)
+ 
+📑 Livrables attendus
+•	Code source complet (backend + frontend)
+•	Fichier README.md pour expliquer comment lancer le projet en local
+•	Scripts SQL de création de la base PostgreSQL ou fichier .prisma
+•	Documentation des routes API (REST) via Postman ou Swagger
+•	Interface utilisateur responsive avec authentification
+•	Déploiement possible (Render/Railway conseillé, optionnel)
+ 
+Merci de me confirmer si tu peux développer cette application avec ce cahier des charges. Je suis disponible pour clarifier les points techniques ou fonctionnels si besoin.
+
