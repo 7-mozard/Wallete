@@ -107,11 +107,13 @@ INSERT INTO products (id, name, description, price, currency, stock, image_url, 
 
 -- Exemple de client test (optionnel)
 INSERT INTO users (id, email, password, first_name, last_name, role, is_blocked, created_at, updated_at) VALUES 
-('client-uuid-001', 'client@test.com', '$2b$10$n7V5VmmYZuJDHsQeLjzBiOajuHo0.CSvMJZwDa3Vt1XYSfbZEbhGu', 'Client', 'Test', 'client', false, now(), now());
+('client-uuid-001', 'client@test.com', '$2b$10$n7V5VmmYZuJDHsQeLjzBiOajuHo0.CSvMJZwDa3Vt1XYSfbZEbhGu', 'Client', 'Test', 'client', false, now(), now()),
+('client-uuid-002', 'client2@test.com', '$2b$10$n7V5VmmYZuJDHsQeLjzBiOajuHo0.CSvMJZwDa3Vt1XYSfbZEbhGu', 'Client', 'Deux', 'client', false, now(), now());
 
 -- Portefeuille client test avec quelques fonds
 INSERT INTO wallets (id, user_id, balance_fc, balance_usd, created_at, updated_at) VALUES 
-('wallet-client-001', 'client-uuid-001', '50000.00', '100.00', now(), now());
+('wallet-client-001', 'client-uuid-001', '50000.00', '100.00', now(), now()),
+('wallet-client-002', 'client-uuid-002', '100000.00', '200.00', now(), now());
 
 -- Quelques notifications d'exemple
 INSERT INTO notifications (id, user_id, title, message, is_read, created_at) VALUES 
