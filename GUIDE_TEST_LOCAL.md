@@ -12,7 +12,7 @@
 
 ```bash
 # Cloner le projet
-git clone [URL_DU_PROJET]
+git clone [URL_DU_PROJET]term
 cd wallete
 
 # Installer les dépendances
